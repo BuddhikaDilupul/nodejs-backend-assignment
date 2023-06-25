@@ -5,23 +5,19 @@ exports.mailService = async (props) => {
   let content = ``
   console.log(props)
   if (props.type === 'likes') {
-     content = `
+    content = `
     <table>
       <tr>
         <th>Author</th>
         <th>Likes</th>
       </tr>
-      <!-- Loop through the authorData array and add a row for each author -->
-      ${authorData.map((author, index) => (
-        <tr key ={inde}>
-          <td>{author.firstName}</td>
-          <td>{count}</td>
-        </tr>
-      ))}
+      ${props.authorData.map((author, index) => (
+      '<tr key="' + index + '"><td>' + author.author.firstName + '</td><td>' +author.count + '</td></tr>'
+    ))}
     </table>
-  `;
-  
-  
+`
+
+
     console.log(content);
   }
   let transporter = nodemailer.createTransport({
