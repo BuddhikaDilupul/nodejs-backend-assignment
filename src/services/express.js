@@ -7,14 +7,26 @@ const errorHandler = require("../middlewares/errorHandler");
 const scheduledFunctions = require("../middlewares/shedule");
 const cors = require('cors')
 const authJwt = require('../middlewares/jwt')
+const FileStreamRotator = require('file-stream-rotator');
 const fs = require('fs');
 const path = require('path');
 const app = express();
 
 
+const logDirectory = path.join(__dirname, 'log');
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
-app.use(morgan("tiny")); //logger
+const accessLogStream = FileStreamRotator.getStream({
+  filename: path.join(logDirectory, 'access-%DATE%.log'),
+  frequency: 'daily', // Rotate daily
+  verbose: false,
+});
+
+
+
+app.use(morgan('combined', { stream: accessLogStream }));
+
+app.use(morgan("tiny"),); //logger
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
