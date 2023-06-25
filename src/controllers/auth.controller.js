@@ -1,5 +1,4 @@
 const httpStatus = require('http-status')
-const { mailService } = require('../services/mailer')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const userModel = require('../models/user.model')

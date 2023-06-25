@@ -9,12 +9,14 @@ const bookController = require("../../controllers/book.controller");
 
 router.post(
   "/",
+  authenticate,authorize([ROLES.admin]),
   validate(bookValidation.create),
   bookController.create
 );
 
 router.put(
   "/:id",
+  authenticate,authorize([ROLES.admin,ROLES.User]),
   bookController.like
 );
 

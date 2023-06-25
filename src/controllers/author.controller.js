@@ -56,9 +56,7 @@ exports.likeCount = async (req, res, next) => {
         email: config.sendEmailAddress,
         authorData: authorData,
       })
-      console.log("KO", authorData);
       return (authorData);
-      //  return res.status(httpStatus.OK).json(authorData);
     }
 
   } catch (error) {
