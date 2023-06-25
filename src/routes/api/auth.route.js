@@ -10,12 +10,12 @@ const { authorize } = require("../../middlewares/authorize");
 router.post(
   "/login",
   validate(authValidation.login),
-   authController.login
+  authController.login
 );
 router.post(
   "/",
   validate(authValidation.create),
-   authController.create
+  authController.create
 );
 
 

@@ -53,7 +53,7 @@ exports.likeCount = async (req, res, next) => {
       mailService({
         type: 'likes',
         subject: 'Like count',
-        email: "buddhikad1999@gmail.com",
+        email: config.sendEmailAddress,
         authorData: authorData,
       })
       console.log("KO", authorData);

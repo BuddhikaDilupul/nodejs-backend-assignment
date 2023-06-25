@@ -31,7 +31,7 @@ exports.create = async (req, res, next) => {
       
       const secret = process.env.secret
       if (!user) {
-        return res.status(httpStatus.NOT_FOUND).send('customer not found!!')
+        return res.status(httpStatus.NOT_FOUND).send('user not found!!')
       }
       if (user && bcrypt.compareSync(req.body.password, user.password)) {
         const token = jwt.sign(
