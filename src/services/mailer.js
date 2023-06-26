@@ -3,7 +3,6 @@ const config = require('../config')
 
 exports.mailService = async (props) => {
   let content = ``
-  console.log(props)
   if (props.type === 'likes') {
     content = `
     <table>

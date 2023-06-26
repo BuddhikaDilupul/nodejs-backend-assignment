@@ -7,10 +7,16 @@ const errorHandler = require("../middlewares/errorHandler");
 const scheduledFunctions = require("../middlewares/shedule");
 const cors = require('cors')
 const authJwt = require('../middlewares/jwt')
+const fs = require('fs');
+
+
+const logStream = fs.createWriteStream('log.txt', { flags: 'a' });
+
 
 const app = express();
+app.use(morgan("tiny")); //logger
+app.use(morgan('tiny', { stream: logStream }));
 
-app.use(morgan("tiny"),); //logger
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
