@@ -7,7 +7,7 @@ const config = require("../config");
 
 //controller for author registration
 exports.create = async (req, res, next) => {
-
+console.log("lo");
   try {
     const existsAuthor = await Author.find({
       email: req.body.email,
@@ -19,7 +19,8 @@ exports.create = async (req, res, next) => {
       const author = new Author({
         email: req.body.email,
         firstName: req.body.firstName,
-        lastName: req.body.lastName
+        lastName: req.body.lastName,
+        contact: req.body.contact
       });
       await author.save();
 

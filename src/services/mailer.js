@@ -7,11 +7,11 @@ exports.mailService = async (props) => {
     content = `
     <table>
       <tr>
-        <th>Author</th>
+        <th>Author Name</th>
         <th>Likes</th>
       </tr>
       ${props.authorData.map((author, index) => (
-      '<tr key="' + index + '"><td>' + author.author.firstName + '</td><td>' +author.count + '</td></tr>'
+      '<tr key="' + index + '"><td>' + author.author.firstName +" "+ author.author.lastName + '</td><td>' +author.count + '</td></tr>'
     ))}
     </table>
 `

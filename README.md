@@ -32,16 +32,16 @@ mongodb for db tech
 logger => morgan logger
 
 APIs
-1).http://localhost:4041/publications/author - POST - register author by admin - token
+1).http://localhost:4041/publications/author - POST - register author by admin - token need
 
-2).http://localhost:4041/publications/book -    POST - register book by admin - token
+2).http://localhost:4041/publications/book -    POST - register book by admin - token need
 
 3).http://localhost:4041/publications/search - POST - search by isbn number
 
-4).http://localhost:4041/publications/category/ - POST -
+4).http://localhost:4041/publications/category/ - POST -  - token need
 
 5).http://localhost:4041/publications/auth/login -POST - all users
 
 6).http://localhost:4041/publications/auth/ -POST - register by users self
 
-7).http://localhost:4041/publications/book/id -PUT - provide like
+7).http://localhost:4041/publications/book/id -PUT - provide like  - token need

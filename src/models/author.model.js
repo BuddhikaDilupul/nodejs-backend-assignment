@@ -15,6 +15,10 @@ const authorShema = new Schema(
       type: String,
       required: true,
     },
+    contact: {
+      type: String,
+      required: true,
+    },
     status: {
       type: String,
       default: "active",
