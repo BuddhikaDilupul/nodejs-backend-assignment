@@ -33,15 +33,42 @@ logger => morgan logger
 
 APIs
 1).http://localhost:4041/publications/author - POST - register author by admin - token need
+{
+    "email" :"usee@gmail.com",
+    "firstName":"abc",
+    "lastName":"abc",
+    "contact": "0112342343"
+}
 
 2).http://localhost:4041/publications/book -    POST - register book by admin - token need
-
+{
+    "category": "649908813aac5baefd8dade4",
+    "ISBN": "as2",
+    "title": "abcss",
+    "author": "6499055f8a4ed56f929b8335"
+}
 3).http://localhost:4041/publications/search - POST - search by isbn number
+{"searchData": "ab"}
 
-4).http://localhost:4041/publications/category/ - POST -  - token need
+4).http://localhost:4041/publications/category/ - POST -  -add category by admin - token need
+{
+    "categoryName":"category 4"
+}
 
 5).http://localhost:4041/publications/auth/login -POST - all users
+    {
+    "email" :"user@gmail.com",
+    "password": "abc123"
+    }
 
 6).http://localhost:4041/publications/auth/ -POST - register by users self
-
+{
+    "email" :"user@gmail.com",
+    "password": "abc123"
+    "firstName":"abc",
+    "lastName":"abc"
+}
 7).http://localhost:4041/publications/book/id -PUT - provide like  - token need
+
+http://localhost:4041/publications/book/64984d083874fea83c738855
+{"userId":"6499055f8a4ed56f929b8335"}
