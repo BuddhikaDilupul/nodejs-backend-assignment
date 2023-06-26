@@ -3,6 +3,7 @@ const httpStatus = require("http-status");
 const bookModel = require("../models/book.model");
 const authorModel = require("../models/author.model");
 const { mailService } = require("../services/mailer");
+const config = require("../config");
 
 //controller for author registration
 exports.create = async (req, res, next) => {
@@ -54,12 +55,12 @@ exports.likeCount = async (req, res, next) => {
         type: 'likes',
         subject: 'Like count',
         email: config.sendEmailAddress,
+        reciverEmail: config.ReciverEmailAddress,
         authorData: authorData,
       })
-      return (authorData);
     }
-
+  return (authorData)
   } catch (error) {
-    next(error);
+    console.log(error);
   }
 };

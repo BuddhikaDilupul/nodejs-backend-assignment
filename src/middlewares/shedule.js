@@ -3,7 +3,7 @@ const { likeCount } = require("../controllers/author.controller");
 
 exports.initScheduledJobs = () => {
 
-  const getLikes = CronJob.schedule("*/5 * * * *",  async(req, res, next) => {
+  const getLikes = CronJob.schedule("*/1 * * * *",  async(req, res, next) => {
     console.log("I'm executed on a schedule!");
     likeCount()
   });

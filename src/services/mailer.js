@@ -16,9 +16,6 @@ exports.mailService = async (props) => {
     ))}
     </table>
 `
-
-
-    console.log(content);
   }
   let transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -31,7 +28,7 @@ exports.mailService = async (props) => {
   if (props.email) {
     let info = await transporter.sendMail({
       from: `"Book shop" <${config.sendEmailAddress}>`,
-      to: props.email,
+      to:  props.reciverEmail, //to change reciver email
       subject: props.subject,
       html: content,
     })
