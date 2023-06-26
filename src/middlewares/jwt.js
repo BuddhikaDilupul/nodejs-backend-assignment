@@ -10,7 +10,7 @@ const authjwt = () => {
         path: [
             '/publications/category/search',
             '/publications/category/auth/login',
-            '/publications/category/auths',
+            '/publications/category/auth',
         ],
     })
 }
